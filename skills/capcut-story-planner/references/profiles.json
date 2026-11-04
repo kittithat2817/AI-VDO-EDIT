@@ -1,0 +1,12 @@
+{
+  "general": {"required": []},
+  "hamhang-experiment": {
+    "required": ["non_drinking", "approval_notice", "product_mark", "product_note"],
+    "conditional": ["demonstration_context", "platform_cta"],
+    "text_sources": {
+      "non_drinking": {"page": 4, "text": "ไม่สนับสนุนให้ดื่มแอลกอฮอล์"},
+      "approval_notice": {"page": 6, "text": "ขอ.480-2568"},
+      "product_note": {"page": 6, "text": "* เป็นข้อมูลเบื้องต้นของผลิตภัณฑ์ ไม่ใช่คำแนะนำทางการแพทย์ ผลลัพธ์ขึ้นอยู่กับบุคคล ผู้มีโรคประจำตัวควรปรึกษาแพทย์หรือเภสัชกรก่อน *"}
+    }
+  }
+}

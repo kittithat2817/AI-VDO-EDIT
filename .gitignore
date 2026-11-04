@@ -1,0 +1,31 @@
+# Local editing jobs, source media, research captures, and backups
+/.scratch/
+/research/
+/work/*
+!/work/workflows/
+
+# Credentials and machine-specific files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+
+# Python environments and generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*-env/
+.pytest_cache/
+
+# Media and native project payloads stay local
+*.mp4
+*.MOV
+*.mov
+*.wav
+*.mp3
+*.bak
+draft_info.json
+draft_content.json

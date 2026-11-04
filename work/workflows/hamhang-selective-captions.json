@@ -1,0 +1,38 @@
+{
+  "name": "hamhang-selective-captions",
+  "version": 2,
+  "scope": "User-selected Hamhang talking/demo edits; opt-in, not a global subtitle default",
+  "mode": "selective",
+  "target_words": 4,
+  "max_words": 5,
+  "keyword_words": 1,
+  "terms": [
+    "แฮมแฮงค์",
+    "แฮม",
+    "แฮงค์",
+    "อะเซทัลดีไฮด์",
+    "แอลกอฮอล์",
+    "Shopee",
+    "15–20"
+  ],
+  "omit_filler": true,
+  "preserve_qualifiers": true,
+  "caption_preset": "DB Med2",
+  "brand_color": "#FF8000",
+  "emphasis_color": "#FF3A3A",
+  "animation_policy": "Keep shared caption anchor static; omit caption animations that move text. Other authorized effects remain separately reviewed.",
+  "sop_text_exempt": true,
+  "provenance": "Explicit user feedback and execution request in this chat; no source paths, clip IDs or timestamps are reusable rules",
+  "max_lines": 1,
+  "require_layout_evidence": true,
+  "shared_caption_anchor": true,
+  "shared_anchor_roles": [
+    "main",
+    "keyword"
+  ],
+  "overflow_strategy": [
+    "condense_without_claim_change",
+    "semantic_split",
+    "measured_uniform_size_reduction"
+  ]
+}

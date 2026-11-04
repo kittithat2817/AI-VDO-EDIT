@@ -1,0 +1,4 @@
+interface:
+  display_name: "ตัดต่อ CapCut ผ่านไฟล์"
+  short_description: "ตัดต่อหลายรูปแบบผ่านไฟล์ โดยไม่เปิด CapCut"
+  default_prompt: "ใช้ $capcut-script-edit ตัดคลิปตามบรีฟและสื่อของงานนี้ผ่านไฟล์โปรเจกต์เท่านั้น ห้ามเปิดหรือควบคุม CapCut และปรับ workflow ให้เหมาะกับคลิปปัจจุบัน"

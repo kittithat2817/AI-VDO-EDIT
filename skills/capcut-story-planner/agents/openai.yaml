@@ -1,0 +1,3 @@
+interface:
+  display_name: "CapCut Story Planner"
+  short_description: "เรียงเรื่องจากคลิปดิบตาม SOP แล้วส่งต่อ capcut-script-edit"
