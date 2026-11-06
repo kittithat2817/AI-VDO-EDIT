@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 450" fill="none">
+<title>โครงคลิปโปรโมชัน ฮุค ข้อเสนอ และ CTA</title>
+<defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffd2b0" opacity=".30"/></pattern><marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m0 0 10 5-10 5z" fill="#f5bf94"/></marker></defs>
+<rect x="1" y="1" width="638" height="448" rx="26" fill="#442d2a" stroke="#876253"/><rect x="15" y="15" width="610" height="420" rx="20" fill="url(#dots)"/>
+<g font-family="system-ui,sans-serif" font-weight="750" font-size="13" letter-spacing="2" fill="#ffcfaa"><text x="34" y="56">01  HOOK</text><text x="231" y="56">02  OFFER</text><text x="454" y="56">03  CTA</text></g>
+<rect x="34" y="77" width="152" height="212" rx="14" fill="#f6dcc4"/><rect x="231" y="77" width="178" height="212" rx="14" fill="#f1a87f"/><rect x="454" y="77" width="152" height="212" rx="14" fill="#f9e8cf"/>
+<path d="M195 179h27m196 0h27" stroke="#f5bf94" stroke-width="3" stroke-dasharray="4 4" marker-end="url(#tip)"/>
+<path d="M110 105l10 29 29 10-29 10-10 29-10-29-29-10 29-10z" fill="#a94f37"/>
+<path d="M72 218h76m-62 16h48m-35 16h22" stroke="#b28571" stroke-width="6" stroke-linecap="round"/>
+<path d="M266 111h75l34 36-55 55-54-54z" fill="#533329"/><circle cx="284" cy="130" r="6" fill="#f1a87f"/><path d="m307 167 33-33" stroke="#f8dbc1" stroke-width="6" stroke-linecap="round"/><circle cx="309" cy="140" r="6" stroke="#f8dbc1" stroke-width="4"/><circle cx="337" cy="168" r="6" stroke="#f8dbc1" stroke-width="4"/>
+<path d="M269 222h103m-93 16h83m-69 16h55" stroke="#8d523f" stroke-width="6" stroke-linecap="round"/>
+<g stroke="#65433b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M490 143h80l-8 48h-64zM512 143l13-23m22 23-13-23m-18 41v15m28-15v15"/></g>
+<rect x="478" y="218" width="104" height="40" rx="20" fill="#734437"/><path d="M508 238h44m-9-9 9 9-9 9" stroke="#fff1df" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="34" y="326" width="572" height="80" rx="13" fill="#302321" stroke="#9a7561"/><rect x="48" y="343" width="122" height="29" rx="6" fill="#e9bd9e"/><rect x="176" y="343" width="246" height="29" rx="6" fill="#f1a87f"/><rect x="428" y="343" width="164" height="29" rx="6" fill="#f7e0c7"/>
+<path d="M48 388h544" stroke="#a47c68" stroke-dasharray="5 7"/><path d="M293 333v66" stroke="#fff2df" stroke-width="2"/>
+</svg>

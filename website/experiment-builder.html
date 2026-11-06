@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="สร้างคำสั่ง Codex สำหรับคลิปทดลองสินค้า จากโจทย์ทดลอง ผลที่มี และสิ่งที่อยากให้คนดูเข้าใจ">
+  <meta name="theme-color" content="#19362e">
+  <title>ชุดคำสั่งทดลองสินค้า | AI HERO VDO EDIT</title>
+  <link rel="icon" type="image/svg+xml" href="img/mark.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script src="experiment-builder.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+  <header class="topbar"><div class="wrap"><a class="brand" href="index.html"><b aria-hidden="true">✦</b> AI HERO VDO EDIT</a><nav class="topnav" aria-label="ทางลัด"><a href="index.html">เลือกโหมด</a><a href="experiment.html">คู่มือฉบับละเอียด</a></nav></div></header>
+  <main id="main" class="wrap bofu-page">
+    <div class="bofu-intro experiment-intro">
+      <div><p class="kicker">01 · PRODUCT EXPERIMENT</p><h1>ทดลองสินค้า</h1><p>สร้างคำสั่งให้ Codex วางเรื่องจากภาพสาธิต เลือกผลที่เห็นจริง และเก็บเงื่อนไขที่คนดูต้องเข้าใจ</p><a class="button bofu-button" href="#builder">เริ่มสร้างคำสั่ง ↓</a></div>
+      <img src="img/workflow.svg" width="640" height="450" alt="เลือกช่วงจากไฟล์ทดลองแล้ววางแผนก่อนลง Timeline">
+    </div>
+    <section class="builder experiment-builder" id="builder" aria-labelledby="builder-title">
+      <div class="builder-head"><div><p class="kicker">PROMPT BUILDER</p><h2 id="builder-title">กรอก 3 อย่างก่อนสร้างคำสั่ง</h2><p>ใส่ข้อมูลที่มี แล้วเลือกวิธีเปิดคลิปและขั้นที่ต้องการให้ Codex ทำ</p></div><button class="button outline" id="demo" type="button">ลองข้อมูลตัวอย่าง</button></div>
+      <p class="demo-note" id="demo-note" hidden>กำลังดูข้อมูลสมมติ ล้างแบบฟอร์มก่อนกรอกงานจริง</p>
+      <form id="experiment-form" autocomplete="off">
+        <div class="field-step"><span class="step-number" aria-hidden="true">1</span><div class="field-content"><h3>ทดลองสินค้าอะไร</h3><div class="paired-fields"><div><label for="product">ชื่อสินค้า</label><input id="product" maxlength="120" required placeholder="เช่น แก้วเก็บความเย็น A"></div><div><label for="project">ชื่อโปรเจกต์ CapCut และ Timeline (ถ้ามี)</label><input id="project" maxlength="200" required placeholder="เช่น ทดลองแก้ว A / แนวตั้ง v2"></div></div></div></div>
+        <div class="field-step"><span class="step-number" aria-hidden="true">2</span><div class="field-content"><h3><label for="method">ทดลองอะไรและทำอย่างไร</label></h3><textarea id="method" maxlength="700" rows="3" required aria-describedby="method-help" placeholder="เช่น เปรียบเทียบแก้ว A กับแก้วทั่วไป ใส่น้ำแข็งเท่ากันและถ่ายหลัง 30 นาที"></textarea><small id="method-help">ระบุสิ่งที่เปรียบเทียบ วิธีทดลอง และเงื่อนไขที่สำคัญเท่าที่รู้</small></div></div>
+        <div class="field-step"><span class="step-number" aria-hidden="true">3</span><div class="field-content"><h3><label for="takeaway">อยากให้คนดูเข้าใจอะไร</label></h3><input id="takeaway" maxlength="240" required placeholder="เช่น ให้คนดูเห็นความต่างของน้ำแข็งที่เหลือภายใต้เงื่อนไขนี้"><small>เขียนสารหลักหนึ่งประโยค ผลทดลองให้ตรวจจากภาพและคำพูดต้นฉบับ</small><div class="optional-cta"><label for="cta">อยากให้คนดูทำอะไรต่อ (ถ้ามี)</label><input id="cta" maxlength="220" placeholder="เช่น ดูรายละเอียดวิธีใช้บนฉลาก"></div></div></div>
+        <fieldset class="pace"><legend>เลือกวิธีเปิดคลิป</legend><div class="pace-grid">
+          <label class="choice"><input type="radio" name="opening" value="question" checked><span><strong>ตั้งโจทย์ก่อน</strong><small>บอกว่าจะทดลองอะไร แล้วพาดูวิธีทำและผล</small></span></label>
+          <label class="choice"><input type="radio" name="opening" value="result"><span><strong>โชว์ผลก่อน</strong><small>เปิดด้วยภาพผลที่เห็นจริง แล้วย้อนอธิบายวิธีทดลอง</small></span></label>
+        </div></fieldset>
+        <div class="build-actions"><div class="scope"><label for="scope">ให้ Codex ทำถึงขั้นไหน</label><select id="scope"><option value="plan">วางแผนอย่างเดียว</option><option value="edit">วางแผนและตัดจริง</option></select></div><button class="button primary" type="submit">สร้างคำสั่งทดลองสินค้า</button><button class="button outline" type="reset">ล้างแบบฟอร์ม</button></div>
+      </form>
+      <section class="bofu-result" id="experiment-result" aria-labelledby="result-title" hidden>
+        <h3 id="result-title" tabindex="-1">คำสั่งสำหรับวางในแชต Codex</h3>
+        <div class="prompt"><div class="prompt-head"><span>ชุดคำสั่งทดลองสินค้า</span><button class="copy" type="button" data-copy="experiment-prompt">คัดลอก</button></div><pre tabindex="0"><code id="experiment-prompt"></code></pre></div>
+      </section>
+    </section>
+    <aside class="bofu-note"><h2>ถ้าภาพหรือเสียงยืนยันผลไม่ได้</h2><p>ให้ Codex แยกสิ่งที่เห็นจริงจากจุดที่ยังไม่ชัด แล้วถามก่อนเลือกช่วงที่มีผลต่อข้อสรุป ดูขั้นตอนและเกณฑ์ตรวจเพิ่มใน <a href="experiment.html">คู่มือฉบับละเอียด</a></p></aside>
+  </main>
+  <div class="status" id="copy-status" role="status" aria-live="polite"></div>
+  <footer class="foot"><div class="wrap"><a href="index.html">← กลับไปเลือกฟังก์ชัน</a><a href="#top">กลับขึ้นบน ↑</a></div></footer>
+</body>
+</html>

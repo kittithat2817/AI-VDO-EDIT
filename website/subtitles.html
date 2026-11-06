@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="สร้างคำสั่ง Codex สำหรับเพิ่มหรือแก้ซับ CapCut ให้ตรงกับเสียงใน Timeline">
+  <meta name="theme-color" content="#19362e">
+  <title>ชุดคำสั่งทำซับ CapCut | AI HERO VDO EDIT</title>
+  <link rel="icon" type="image/svg+xml" href="img/mark.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script src="subtitles.js" defer></script>
+  <script src="subtitle-preview.js" type="module"></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+  <header class="topbar"><div class="wrap"><a class="brand" href="index.html"><b aria-hidden="true">✦</b> AI HERO VDO EDIT</a><nav class="topnav" aria-label="ทางลัด"><a href="index.html">เลือกโหมด</a><a href="experiment.html#subtitle-guide">คู่มือทำซับ</a></nav></div></header>
+  <main id="main" class="wrap bofu-page">
+    <div class="bofu-intro subtitle-intro">
+      <div><p class="kicker">03 · SUBTITLE WORKFLOW</p><h1>ทำซับ CapCut</h1><p>สร้างคำสั่งเพิ่มซับหรือแก้ซับตามเสียงใน Timeline ปัจจุบัน ให้คนดูอ่านทันและรักษาจังหวะภาพกับเสียงเดิม</p><div class="subtitle-links"><a class="button bofu-button" href="#caption-preview">ลองดูตัวอย่างซับ ↓</a><a class="button outline" href="#builder">เริ่มสร้างคำสั่ง</a></div></div>
+      <img src="img/subtitle-flow.svg" width="640" height="450" alt="คำพูดถูกแบ่งเป็นช่วงซับและวางตามเวลาใน Timeline">
+    </div>
+    <section class="builder subtitle-builder" id="builder" aria-labelledby="builder-title">
+      <div class="builder-head"><div><p class="kicker">PROMPT BUILDER</p><h2 id="builder-title">สร้างคำสั่งทำซับ</h2><p>เลือกงานที่ต้องการ แล้วกรอกข้อมูลของ Timeline ที่จะทำซับ</p></div><button class="button outline" id="demo" type="button">ลองข้อมูลตัวอย่าง</button></div>
+      <p class="demo-note" id="demo-note" hidden>กำลังดูข้อมูลสมมติ ล้างแบบฟอร์มก่อนกรอกงานจริง</p>
+      <form id="subtitle-form" autocomplete="off">
+        <div class="field-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <div class="field-content">
+            <h3>โปรเจกต์และช่วงเวลา</h3>
+            <div class="paired-fields">
+              <div>
+                <label for="project">ชื่อโปรเจกต์ CapCut และ Timeline (ถ้ามี)</label>
+                <input id="project" maxlength="200" required placeholder="เช่น รีวิว A / แนวตั้ง v2">
+              </div>
+              <div>
+                <label for="range">ช่วงเวลาใน Timeline</label>
+                <select id="range">
+                  <option value="all">ทั้ง Timeline</option>
+                  <option value="in-out">ช่วง In–Out</option>
+                  <option value="in-to-end">จากจุด In ถึงท้าย Timeline</option>
+                  <option value="start-to-out">จากต้น Timeline ถึงจุด Out</option>
+                </select>
+              </div>
+            </div>
+            <div id="timeline-points" class="target-field" hidden>
+              <div class="paired-fields">
+                <div id="timeline-in-field" hidden>
+                  <label for="timeline-in">จุด In (เวลาเริ่ม)</label>
+                  <input id="timeline-in" maxlength="12" placeholder="เช่น 00:05" aria-describedby="timeline-time-help" disabled>
+                </div>
+                <div id="timeline-out-field" hidden>
+                  <label for="timeline-out">จุด Out (เวลาจบ)</label>
+                  <input id="timeline-out" maxlength="12" placeholder="เช่น 00:32" aria-describedby="timeline-time-help" disabled>
+                </div>
+              </div>
+              <small id="timeline-time-help">ใช้เวลาบน Timeline เช่น 00:05, 00:01:20.500 หรือ 00:01:20:12 (เลขท้ายเป็นเฟรม)</small>
+            </div>
+          </div>
+        </div>
+        <div class="field-step"><span class="step-number" aria-hidden="true">2</span><div class="field-content"><h3><label for="operation">ต้องการทำอะไรกับซับ</label></h3><select id="operation"><option value="add">เพิ่มซับแทร็กใหม่</option><option value="edit">แก้ซับชุดเดิม</option></select><div class="target-field" id="target-field" hidden><label for="track">ชื่อแทร็กซับหรือชุดซับที่ต้องการแก้</label><input id="track" maxlength="160" placeholder="เช่น ซับไทยหลัก หรือซับเดิมช่วง 00:05–00:32"></div></div></div>
+        <div class="field-step"><span class="step-number" aria-hidden="true">3</span><div class="field-content"><h3>ภาษาและรายละเอียดเพิ่มเติม</h3><div class="paired-fields"><div><label for="spoken">ภาษาเสียง (ถ้ารู้)</label><input id="spoken" maxlength="80" placeholder="เช่น ไทย"></div><div><label for="translation">ภาษาซับปลายทาง (ถ้าต้องการแปล)</label><input id="translation" maxlength="80" placeholder="เว้นว่างเพื่อใช้ภาษาเดียวกับเสียง"></div></div><div class="target-field"><label for="notes">คำสะกดหรือต้นแบบซับ (ถ้ามี)</label><textarea id="notes" maxlength="650" rows="2" placeholder="เช่น ชื่อสินค้าเขียนว่า … ใช้สีและตำแหน่งตามซับธรรมดาในช่วง 00:08"></textarea></div></div></div>
+        <fieldset class="pace"><legend>เลือกแบบซับ</legend><div class="pace-grid">
+          <label class="choice"><input type="radio" name="captionMode" value="full" checked><span><strong>ซับเต็ม</strong><small>ถอดตามคำพูดและแบ่งวลีให้อ่านทัน</small></span></label>
+          <label class="choice"><input type="radio" name="captionMode" value="selective"><span><strong>ซับเน้นสารสำคัญ</strong><small>เลือกข้อความสั้น โดยรักษาตัวเลข เงื่อนไข และความหมาย</small></span></label>
+        </div></fieldset>
+        <section class="caption-preview" id="caption-preview" aria-labelledby="caption-preview-title">
+          <div class="caption-preview-head">
+            <p class="kicker">SUBTITLE PREVIEW</p>
+            <h3 id="caption-preview-title">ลองซับก่อนสร้างคำสั่ง</h3>
+            <p>ลองจัดหน้าตาและจำนวนคำต่อบรรทัดกับข้อความตัวอย่าง เมื่อพอใจแล้วกดสร้างคำสั่งทำซับด้านล่าง</p>
+          </div>
+          <div class="caption-preview-grid">
+            <div class="caption-player">
+              <div class="caption-stage">
+                <div class="caption-frame" id="caption-frame" data-ratio="portrait" data-look="plain">
+                  <span class="caption-frame-tag" aria-hidden="true">ข้อความตัวอย่าง</span>
+                  <div class="caption-demo-line" id="caption-demo-line"><span id="caption-demo-text">ทั้งวันทั้งคืน</span></div>
+                </div>
+              </div>
+              <div class="caption-player-actions">
+                <button class="button primary" id="caption-play" type="button">เล่นตัวอย่าง</button>
+                <button class="button outline" id="caption-next" type="button">ช่วงถัดไป →</button>
+              </div>
+              <progress id="caption-progress" value="1" max="3" aria-label="ลำดับซับตัวอย่าง"></progress>
+              <p id="caption-cue-info" class="caption-cue-info">ช่วง 1 จาก 3</p>
+            </div>
+            <div class="caption-controls">
+              <fieldset class="caption-ratio">
+                <legend>สัดส่วนภาพ</legend>
+                <label><input type="radio" name="previewRatio" value="portrait" checked><span>แนวตั้ง 9:16</span></label>
+                <label><input type="radio" name="previewRatio" value="landscape"><span>แนวนอน 16:9</span></label>
+              </fieldset>
+              <div>
+                <label for="caption-look">สไตล์ตัวอย่าง</label>
+                <select id="caption-look">
+                  <option value="plain">ตัวอักษรเรียบ</option>
+                  <option value="box">กล่องเข้ม</option>
+                  <option value="outline">ขอบเข้ม</option>
+                </select>
+              </div>
+              <div>
+                <label class="caption-slider-label" for="caption-size">ขนาดตัวอักษร <span id="caption-size-value" aria-hidden="true">60</span></label>
+                <input id="caption-size" type="range" min="40" max="115" value="60" step="1">
+              </div>
+              <div>
+                <label class="caption-slider-label" for="caption-position">ตำแหน่งแนวตั้ง <span id="caption-position-value" aria-hidden="true">78%</span></label>
+                <input id="caption-position" type="range" min="15" max="90" value="78" step="1">
+              </div>
+              <div>
+                <label class="caption-slider-label" for="caption-line-words">คำต่อบรรทัด <span id="caption-line-words-value" aria-hidden="true">6</span></label>
+                <input id="caption-line-words" type="range" min="1" max="6" value="6" step="1" aria-describedby="caption-line-words-help">
+                <small id="caption-line-words-help">จำนวนคำสูงสุดต่อบรรทัด คำตอบสั้นอย่าง “ใช่” ขึ้นเดี่ยวได้</small>
+              </div>
+              <div class="caption-color">
+                <label for="caption-color">สีตัวอักษร</label>
+                <input id="caption-color" type="color" value="#ffffff">
+              </div>
+              <p class="caption-preview-note">คำสั่งจะใช้ค่าที่ตั้งในพรีวิว ส่วนซับจริงจะถอดจากเสียงใน Timeline</p>
+              <p class="caption-preview-warning" id="caption-preview-warning" role="status" hidden></p>
+            </div>
+          </div>
+        </section>
+        <div class="build-actions"><div class="scope"><label for="scope">ให้ Codex ทำถึงขั้นไหน</label><select id="scope"><option value="review">เสนอซับให้ตรวจก่อน</option><option value="write">ใส่ซับลงโปรเจกต์</option></select></div><button class="button primary" type="submit">สร้างคำสั่งทำซับ</button><button class="button outline" type="reset">ล้างแบบฟอร์ม</button></div>
+      </form>
+      <section class="bofu-result" id="subtitle-result" aria-labelledby="result-title" hidden><h3 id="result-title" tabindex="-1">คำสั่งสำหรับวางในแชต Codex</h3><div class="prompt"><div class="prompt-head"><span>ชุดคำสั่งทำซับ</span><button class="copy" type="button" data-copy="subtitle-prompt">คัดลอก</button></div><pre tabindex="0"><code id="subtitle-prompt"></code></pre></div></section>
+    </section>
+    <aside class="bofu-note"><h2>แก้เฉพาะซับเดิมบางช่วง</h2><p>เลือกแก้ซับชุดเดิม ระบุชื่อแทร็กและเวลาใน Timeline แล้วบอกคำเดิมกับคำที่ถูกในช่องรายละเอียด <a href="experiment.html#subtitle-guide">ดูตัวอย่างในคู่มือ</a></p></aside>
+  </main>
+  <div class="status" id="copy-status" role="status" aria-live="polite"></div>
+  <footer class="foot"><div class="wrap"><a href="index.html">← กลับไปเลือกฟังก์ชัน</a><a href="#top">กลับขึ้นบน ↑</a></div></footer>
+</body>
+</html>

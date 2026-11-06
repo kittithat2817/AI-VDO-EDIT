@@ -1,6 +1,7 @@
 # Local editing jobs, source media, research captures, and backups
 /.scratch/
 /research/
+/sites/capcut-editing-sop/
 /work/*
 !/work/workflows/
 

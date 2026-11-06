@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="สร้างคำสั่ง Codex สำหรับคลิปโปรโมชัน BOFU จากโปรเจกต์ ข้อเสนอ และช่องทางซื้อ">
+  <meta name="theme-color" content="#19362e">
+  <title>ชุดคำสั่งโปรโมชัน BOFU | AI HERO VDO EDIT</title>
+  <link rel="icon" type="image/svg+xml" href="img/mark.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script src="bofu.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+  <header class="topbar"><div class="wrap"><a class="brand" href="index.html"><b aria-hidden="true">✦</b> AI HERO VDO EDIT</a><nav class="topnav" aria-label="ทางลัด"><a href="index.html">เลือกโหมด</a><a href="experiment.html#promotion">คู่มือ BOFU</a></nav></div></header>
+  <main id="main" class="wrap bofu-page">
+    <div class="bofu-intro">
+      <div><p class="kicker">02 · PROMOTION WORKFLOW</p><h1>โปรโมชัน /<br>ปิดการขาย BOFU</h1><p>สำหรับคลิปที่พูดกับคนที่สนใจสินค้าอยู่แล้ว ให้เข้าใจว่าโปรคืออะไร เงื่อนไขเป็นอย่างไร และซื้อได้ที่ไหน</p><a class="button bofu-button" href="#builder">เริ่มสร้างคำสั่ง ↓</a></div>
+      <img src="img/bofu-flow.svg" width="640" height="450" alt="โครงขายโปรจากฮุค ไปข้อเสนอ แล้วจบด้วยคำชวนซื้อ">
+    </div>
+    <section class="builder" id="builder" aria-labelledby="builder-title">
+      <div class="builder-head"><div><p class="kicker">PROMPT BUILDER</p><h2 id="builder-title">กรอก 3 อย่างก่อนสร้างคำสั่ง</h2><p>ใช้ข้อมูลของคลิปนี้ แล้วเลือกจังหวะและขั้นที่ต้องการให้ Codex ทำ</p></div><button class="button outline" id="demo" type="button">ลองข้อมูลตัวอย่าง</button></div>
+      <p class="demo-note" id="demo-note" hidden>กำลังดูข้อมูลสมมติ ล้างแบบฟอร์มก่อนกรอกโปรจริง</p>
+      <form id="bofu-form" autocomplete="off">
+        <div class="field-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <div class="field-content"><h3>ขายอะไร</h3><div class="paired-fields"><div><label for="product">ชื่อสินค้า</label><input id="product" maxlength="120" required placeholder="เช่น สินค้า A"></div><div><label for="project">ชื่อโปรเจกต์ CapCut และ Timeline (ถ้ามี)</label><input id="project" maxlength="200" required placeholder="เช่น โปรโมชัน A / แนวตั้ง v2"></div></div></div>
+        </div>
+        <div class="field-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <div class="field-content"><h3><label for="offer">ข้อเสนอคืออะไร</label></h3><textarea id="offer" maxlength="600" rows="3" required aria-describedby="offer-help" placeholder="รายละเอียดโปร พร้อมวันและเงื่อนไขที่ยืนยันได้"></textarea><small id="offer-help">เช่น ซื้อกี่ชิ้น ได้อะไร วันที่ใช้ได้ และจำกัดช่องทางไหน</small></div>
+        </div>
+        <div class="field-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <div class="field-content"><h3><label for="cta">ให้คนดูทำอะไรต่อ</label></h3><input id="cta" maxlength="220" required placeholder="เช่น กดตะกร้าในไลฟ์ของร้าน"><small>ระบุการกระทำและช่องทางที่ตรงกับโปรนี้</small></div>
+        </div>
+        <fieldset class="pace"><legend>เลือกจังหวะของคลิป</legend><div class="pace-grid">
+          <label class="choice"><input type="radio" name="pace" value="fast" checked><span><strong>เข้าโปรไว</strong><small>เปิดด้วยจุดขาย เข้าข้อเสนอ แล้วชวนซื้อทันที</small></span></label>
+          <label class="choice"><input type="radio" name="pace" value="context"><span><strong>เก็บมุกและเหตุผลซื้อ</strong><small>ให้คนดูเข้าใจบริบทและจุดเฉลยก่อนเข้าโปร</small></span></label>
+        </div></fieldset>
+        <div class="build-actions"><div class="scope"><label for="scope">ให้ Codex ทำถึงขั้นไหน</label><select id="scope"><option value="plan">วางแผนอย่างเดียว</option><option value="edit">วางแผนและตัดจริง</option></select></div><button class="button primary" type="submit">สร้างคำสั่ง BOFU</button><button class="button outline" type="reset">ล้างแบบฟอร์ม</button></div>
+      </form>
+      <section class="bofu-result" id="bofu-result" aria-labelledby="result-title" hidden>
+        <h3 id="result-title" tabindex="-1">คำสั่งสำหรับวางในแชต Codex</h3>
+        <div class="prompt"><div class="prompt-head"><span>ชุดคำสั่ง BOFU</span><button class="copy" type="button" data-copy="bofu-prompt">คัดลอก</button></div><pre tabindex="0"><code id="bofu-prompt"></code></pre></div>
+      </section>
+    </section>
+    <aside class="bofu-note"><h2>ถ้าข้อมูลในฟุตเทจพูดคนละโปร</h2><p>ให้ Codex แจ้งจุดที่ขัดกันและถามก่อนเลือกช่วงขาย เช่น วันโปร ส่วนลด หรือช่องทางซื้อ ส่วนเครื่องหมาย-อย. ให้ใช้ SOP ที่ตรงกับสินค้าปัจจุบัน</p></aside>
+  </main>
+  <div class="status" id="copy-status" role="status" aria-live="polite"></div>
+  <footer class="foot"><div class="wrap"><a href="index.html">← กลับไปเลือกฟังก์ชัน</a><a href="#top">กลับขึ้นบน ↑</a></div></footer>
+</body>
+</html>
