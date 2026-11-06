@@ -12,6 +12,8 @@
 
 ## ใช้งาน
 
+ผู้ใช้ใหม่เริ่มจาก [SOP วางเรื่องและตัดต่อ CapCut ด้วย Codex](docs/capcut-ai-workflow-sop.md) พร้อมคำสั่งคัดลอกสำหรับขอแผน ตัดจริง และแก้ QC
+
 คัดลอกโฟลเดอร์สกิลที่ต้องการจาก `skills/` ไปยังโฟลเดอร์สกิลของ Codex เช่น `~/.codex/skills/` โดยสำรองฉบับเดิมก่อนแทนที่ ติดตั้ง planner และ script-edit คู่กันเพื่อใช้เอกสารสัญญาร่วมกัน
 
 ระบุโปรเจกต์ บรีฟ และ SOP ของงาน แล้วเรียก `capcut-story-planner` ตามด้วย `capcut-script-edit` ตรวจ source paths, FPS, timebase และเวอร์ชัน draft ใหม่ทุกงาน
