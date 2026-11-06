@@ -84,6 +84,20 @@ class StoryPlanChecks(unittest.TestCase):
         self.plan['requirements'][0]['status'] = 'not_applicable'
         self.assertFalse(self.check()['valid'])
 
+    def test_product_content_requires_mark_without_unrelated_alcohol_notices(self):
+        self.plan['profile'] = 'user-product-content'
+        self.assertFalse(self.check()['valid'])
+        self.plan['requirements'] = [{'id':'product_mark','status':'missing','delivery':'none',
+            'source_note':'User preset not yet resolved from the local preset library'}]
+        result = self.check()
+        self.assertTrue(result['handoff_ready'], result)
+        self.assertFalse(result['sop_complete'])
+        self.plan['requirements'][0].update(status='satisfied', delivery='media', asset_id='a',
+            source_note='Verified preset imported and bound to actual project media')
+        self.assertTrue(self.check()['sop_complete'])
+        self.plan['requirements'][0].update(status='not_applicable', delivery='none')
+        self.assertFalse(self.check()['valid'])
+
     def test_broken_unused_asset_does_not_block_clear_content(self):
         self.inventory['assets'].append({'asset_id': 'unused', 'path': str(self.root/'missing.mp4'), 'kind': 'video', 'duration_seconds': 1., 'material_ids': ['unused-material'], 'origins': ['timeline'], 'timeline_uses_unknown': True})
         result = self.check()

@@ -1,5 +1,9 @@
 {
   "general": {"required": []},
+  "user-product-content": {
+    "required": ["product_mark"],
+    "preset_policy": "product-mark-preset.md"
+  },
   "hamhang-experiment": {
     "required": ["non_drinking", "approval_notice", "product_mark", "product_note"],
     "conditional": ["demonstration_context", "platform_cta"],
