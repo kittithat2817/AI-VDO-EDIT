@@ -30,7 +30,9 @@
 
 ผู้ใช้ใหม่เริ่มจาก [SOP วางเรื่องและตัดต่อ CapCut ด้วย Codex](docs/capcut-ai-workflow-sop.md) พร้อมคำสั่งคัดลอกสำหรับขอแผน ตัดจริง และแก้ QC
 
-คัดลอกโฟลเดอร์สกิลที่ต้องการจาก `skills/` ไปยังโฟลเดอร์สกิลของ Codex เช่น `~/.codex/skills/` โดยสำรองฉบับเดิมก่อนแทนที่ ติดตั้ง planner และ script-edit คู่กันเพื่อใช้เอกสารสัญญาร่วมกัน
+คัดลอกทั้งสามโฟลเดอร์จาก `skills/` ไปยังโฟลเดอร์สกิลของ Codex เช่น `~/.codex/skills/` โดยสำรองฉบับเดิมก่อนแทนที่ ทั้งสามสกิลใช้สคริปต์ถอดเสียงใน planner ร่วมกัน
+
+บนเครื่องใหม่ให้เตรียม FFmpeg, Python และโมเดลตามคู่มือ แล้วรัน `check` และลองถอดคลิปสั้นก่อนเริ่มตัดจริง [มาตรฐานถอดเสียงและวิธีติดตั้ง](skills/capcut-story-planner/references/local-transcription.md)
 
 ระบุโปรเจกต์ บรีฟ และ SOP ของงาน แล้วเรียก `capcut-story-planner` ตามด้วย `capcut-script-edit` ตรวจ source paths, FPS, timebase และเวอร์ชัน draft ใหม่ทุกงาน
 
